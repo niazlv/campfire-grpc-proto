@@ -3,7 +3,7 @@ syntax = "proto3";
 package auth;
 
 service AuthService {
-  rpc Singup (SignupRequest) returns (SignupResponse) {}
+  rpc Signup (SignupRequest) returns (SignupResponse) {}
   rpc Signin (SigninRequest) returns (SigninResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
 }
