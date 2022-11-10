@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+    rpc getUser() returns() {}
+    rpc createUser() returns() {}
+    rpc deleteUser() returns() {}
+}
+
+message GetUserRequest {
+    int64 id = 1;
+}
+
+message GetUserResponce {
+    int64 id = 1;           //  Number
+
+    string login = 2;       //  String
+    string hash = 3;        //  String
+    string email = 4;       //  String?
+
+    int64 groupid = 5;      //  Number
+    int64 campid = 6;       //  Number
+    string permissions = 7; //  BigInt
+    bool isActive = 8;      //  Boolean default(true)
+
+    string firstname = 9;   //  String?
+    string lastname = 10;   //  String?
+    string middlename = 11; //  String?
+    string birthday = 12;   //  DateTime?
+
+    string createdAt = 13;  //  DateTime
+    string updatedAt = 14;  //  DateTime
+    int64 role = 15;        //  Number(maybe in future as bigint)
+
+    // string referral = 6;    //  JSON
+    // string other = 7;       //  JSON default({})
+
+    // int64 parentid = 16;    //  Number
+    // reserved pools = 19;    //  Number[]
+
+    // float rating = 20;      //  Float
+    // string social = 21;     //  JSON
+    // string documents = 22;  //  JSON
+}
